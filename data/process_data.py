@@ -1,9 +1,19 @@
 import sys
-
+import pandas as pd
+import  sqlalchemy  
+from sqlalchemy import create_engine  #import libaries
 
 def load_data(messages_filepath, categories_filepath):
-    pass
+    """
+    This is to load the two CSV files and then join them
 
+
+    """
+    messages = pd.read_csv('disaster_messages.csv')
+    categories = pd.read_csv('disaster_categories.csv')
+    messages = messages.dropna(subset=['id']) 
+    categories = categories.dropna(subset=['id'])  
+    df = pd.merge(messages, categories, left_on='id', right_on='id', how='inner')
 
 def clean_data(df):
     pass
