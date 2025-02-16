@@ -25,7 +25,8 @@ def load_data(database_filepath):
     Args:
     database_filepath (str) - path to SQLlite database file
 
-    Returns: x - messaged 
+    Returns: X - messages
+    Y - Categories for classification
 
     """
     # load data from database
@@ -39,13 +40,12 @@ def load_data(database_filepath):
 def tokenize(text):
 
     """
-    This is loads data from SQLite database
-    Defines feature and target variables X and Y
+    Tokenization function to process your text data
 
     Args:
-    database_filepath (str) - path to SQLlite database file
+    text (str) - 
 
-    Returns: x - messaged 
+    Returns: list of cleaned and lematized tokens
 
     """
   #Tokenize the text and initialise the lematizer 
@@ -63,10 +63,10 @@ def tokenize(text):
 
 def build_model():
     """
-    
+    Build a machine learning pipeline
 
     Returns:
-        GridSearchCV: .
+        GridSearchCV object
     """
 
     # Instantiate transformers and classifiers
@@ -76,7 +76,7 @@ def build_model():
         ('clf', MultiOutputClassifier(RandomForestClassifier()))
     ])
     
-    # Define hyperparameter grid for GridSearchCV
+    # define parameters for GridSearchCV
     parameters = {
         'clf__estimator__n_estimators': [50, 100]
     }
@@ -88,15 +88,30 @@ def build_model():
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
+
+    """
+    Evaluate model with classification
+
+    Args:
+    Model: GridSearchCV
+    X_test
+    Y_test
+    category_names - list of categories
+
+    Returns:
+        Classification for each category
+    """
   
   # Predict using the model
     Y_pred = model.predict(X_test)
 
-# 
+# print classification for each category
     for i, category in enumerate(Y_test):
         print(classification_report(Y_test.iloc[:, i], Y_pred[:, i]))
 
 def save_model(model, model_filepath):
+
+    # Save model as a pickle file
     pickle.dump(model, open(model_filepath, 'wb'))
 
 def main():
