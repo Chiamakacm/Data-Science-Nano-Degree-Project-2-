@@ -10,6 +10,7 @@ from flask import render_template, request, jsonify
 from plotly.graph_objs import Bar
 from sqlalchemy import create_engine
 
+# Note - this code below was given by udacity, this was stated as allowed in the course. Although there have been adjustments to the code made by me.
 
 app = Flask(__name__)
 
