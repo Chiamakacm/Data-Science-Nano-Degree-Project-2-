@@ -66,7 +66,7 @@ This is to create the app.
 
 # Credit
 
-Udacity course gave starter code which has been used along with project details used in this readme file. Support has also came from Udacity mentors, Udacity AI, Chatgpt, Stack Overflow
+Udacity course gave starter code which has been used in this project along with project details used in this readme file. Support has also came from Udacity mentors, Udacity AI, Chatgpt, Stack Overflow
 
 
 
