@@ -11,7 +11,7 @@ This process is to load the messages and catergories data set. The datasets are 
 Loads the messages and categories datasets
 Merges the two datasets
 Cleans the data
-Stores it in a SQLite database" (copied from Udacity course)
+Stores it in a SQLite database" (as stated in the Udacity course)
 
 # 2 ML Pipeline
 
@@ -24,7 +24,7 @@ Splits the dataset into training and test sets
 Builds a text processing and machine learning pipeline
 Trains and tunes a model using GridSearchCV
 Outputs results on the test set
-Exports the final model as a pickle file" (copied from Udacity course)
+Exports the final model as a pickle file" (as stated in the Udacity course)
 
 # 3 Flask Web App
 
@@ -48,7 +48,7 @@ This is to create the app.
 |- train_classifier.py
 |- classifier.pkl  # saved model 
 
-- README.md" (copied from Udacity course)
+- README.md" (as stated in the Udacity course)
 
 
 ### Instructions:
