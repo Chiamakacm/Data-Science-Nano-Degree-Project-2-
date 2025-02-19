@@ -4,7 +4,8 @@ This is project 2 for the Udacity Data Science Nano Degree course, where I am lo
 
 # 1 ETL Pipeline
 
-This process is to load the messages and catergories data set. The datasets are merged, cleaned and stored in the SQLite database. 
+This process is to load the messages and catergories data set. The datasets are merged, cleaned and stored in the SQLite database.
+
 " In a Python script, process_data.py, write a data cleaning pipeline that:
 
 Loads the messages and categories datasets
