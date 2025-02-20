@@ -27,7 +27,8 @@ def load_data(database_filepath):
 
     Returns: X - messages
     Y - Categories for classification
-
+    Category_names
+    
     """
     # load data from database
 
@@ -35,7 +36,8 @@ def load_data(database_filepath):
     df = pd.read_sql_table("disaster_messages", con=engine)
     X = df['message'] #message
     Y = df.iloc[:, 4:] #to include all columns starting from related
-    return X,Y
+    category_names = Y.columns
+    return X,Y, category_names
 
 def tokenize(text):
 
@@ -71,7 +73,7 @@ def build_model():
 
     # Instantiate transformers and classifiers
     pipeline = Pipeline([
-        ('vect', CountVectorizer(tokenizer=tokenize)),
+        ('vect', CountVectorizer(tokenizer=tokenize, token_pattern=None)),
         ('tfidf', TfidfTransformer()),
         ('clf', MultiOutputClassifier(RandomForestClassifier()))
     ])
